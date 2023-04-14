@@ -35,6 +35,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation fileTree(dir: 'D:\\Android\\FashionStoreApp\\zalopay', include: ['*.aar', '*.jar'], exclude: [])
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -56,11 +57,11 @@ dependencies {
     //thư viện circle images
     //bo goc tron cho ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
-
+    //
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.chthai64:SwipeRevealLayout:1.4.0'
-
-    implementation 'com.github.momo-wallet:mobile-sdk:1.0.7'
+    //zalopay
+    implementation("com.squareup.okhttp3:okhttp:4.6.0")
+    implementation("commons-codec:commons-codec:1.14")
 }

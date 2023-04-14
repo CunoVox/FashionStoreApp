@@ -4,8 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
@@ -24,15 +22,27 @@
         android:fontFamily="@font/be_vietnam"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.LoginActivity"></activity>
-        <activity android:name=".Activity.MainActivity"></activity>
-        <activity android:name=".Activity.SignUpActivity"></activity>
-        <activity android:name=".Activity.ShowDetailActivity"></activity>
-        <activity android:name=".Activity.UserActivity"></activity>
-        <activity android:name=".Activity.ProductsActivity"></activity>
-        <activity android:name=".Activity.CartActivity"></activity>
-        <activity android:name=".Activity.OrderActivity"></activity>
-        <activity android:name=".Activity.CheckOutActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.MainActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.SignUpActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.ShowDetailActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.UserActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.ProductsActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.CartActivity" android:exported="true"></activity>
+        <activity android:name=".Activity.OrderActivity" android:exported="true"></activity>
+        <activity
+            android:name=".Activity.CheckOutActivity"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="demozpdk"
+                    android:host="app" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".Activity.AddressActivity"></activity>
 
         <activity
@@ -40,7 +50,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
